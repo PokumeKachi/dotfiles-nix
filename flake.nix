@@ -55,6 +55,10 @@
                             nur.overlays.default
                             # (import ./overlays)
                         ];
+
+                        imports = builtins.map (p: import (toString p)) (
+                            builtins.filter (p: nixpkgs.lib.hasSuffix ".nix" p) (nixpkgs.lib.fileset.toList ./src)
+                        );
                     }
                 ];
             };

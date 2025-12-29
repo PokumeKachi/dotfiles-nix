@@ -25,20 +25,20 @@
 let
     email = "pokumekachi@disroot.org";
 
-    keysDir = ../assets/ssh-keys;
-    dir = builtins.readDir keysDir;
-    names = builtins.attrNames dir;
-    keyLines =
-        builtins.concatStringsSep "\n" (
-            map (
-                n:
-                let
-                    path = builtins.toString keysDir + "/" + n;
-                in
-                "${email} ${builtins.readFile path}"
-            ) names
-        )
-        + "\n";
+    # keysDir = ../assets/ssh-keys;
+    # dir = builtins.readDir keysDir;
+    # names = builtins.attrNames dir;
+    # keyLines =
+    #     builtins.concatStringsSep "\n" (
+    #         map (
+    #             n:
+    #             let
+    #                 path = builtins.toString keysDir + "/" + n;
+    #             in
+    #             "${email} ${builtins.readFile path}"
+    #         ) names
+    #     )
+    #     + "\n";
 
 in
 {
@@ -68,5 +68,5 @@ in
 
     };
 
-    environment.etc."git/allowed_signers".text = keyLines;
+    # environment.etc."git/allowed_signers".text = keyLines;
 }

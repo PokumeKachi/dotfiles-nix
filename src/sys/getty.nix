@@ -7,7 +7,7 @@
     # helpLine = "hope ur ready";
     # };
 
-    environment.etc."issue".text = builtins.readFile ../assets/startup.txt;
+    # environment.etc."issue".text = builtins.readFile ../assets/startup.txt;
 
     # systemd.services.boot-sound = {
     #     enable = true;

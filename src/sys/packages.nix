@@ -195,7 +195,6 @@ in
         fastfetch
         pfetch-rs
         wl-clipboard
-        linuxPackages_zen.kernel.dev
 
         gcc
         gnumake

@@ -1,4 +1,4 @@
-FLAKE_PATH := "./nix"
+FLAKE_PATH := "."
 HOST_NAME := "#kachi"
 BUILD_PASS_PHRASE := "woler xong pyq gze"
 

@@ -40,15 +40,14 @@
 
         "i915.enable_guc=2"
         "i915.fastboot=1"
-        "i915.enable_gvt=0"
         "i915.enable_rc6=1" # gpu sleep states
         "i915.enable_fbc=1" # framebuffer compression
         "i915.enable_psr=2" # panel self refresh (for eDP displays)
 
-        "i915.enable_dpcd_backlight=1"
         "i915.enable_dc=1" # more aggressive display power saving
 
         "mem_sleep_default=deep" # "deep" or "s2idle" (deep for more battery life but slower wake time)
+        "acpi_backlight=native"
 
         # "resume=/dev/disk/by-uuid/aaf232ab-315b-4d52-850f-c625067a4e71"
     ];

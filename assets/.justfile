@@ -1,9 +1,7 @@
 set shell := ["bash", "-cu"]
 
-# fuzzy target selector
-default:
-    printf '%s\n' idle chat cache-clear _202020 battery yt night todo music chill cloud nvim-sync todo \
-    | fzf | xargs -r just
+_default:
+    @just --choose
 
 night:
     if pgrep gammastep > /dev/null; then

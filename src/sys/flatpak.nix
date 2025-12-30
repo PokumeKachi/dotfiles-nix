@@ -12,5 +12,6 @@
                 location = "https://flathub.org/repo/flathub.flatpakrepo";
             }
         ];
+        update.onActivation = true;
     };
 }

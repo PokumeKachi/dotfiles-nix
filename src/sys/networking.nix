@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
     networking = {
         hostName = "kachi";
@@ -12,7 +11,10 @@
         wireless.iwd.enable = true;
         firewall = {
             enable = true;
-            allowedTCPPorts = [ 3131 1701 ];
+            allowedTCPPorts = [
+                3131
+                1701
+            ];
         };
         extraHosts = "100.92.71.122 ka.com";
 

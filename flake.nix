@@ -49,7 +49,6 @@
                 modules = [
                     nix-flatpak.nixosModules.nix-flatpak
                     stylix.nixosModules.stylix
-                    ./main.nix
                     {
                         nixpkgs.overlays = [
                             nur.overlays.default

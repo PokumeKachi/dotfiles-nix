@@ -11,6 +11,9 @@ in
 
 {
     environment.systemPackages = with pkgs; [
+        page
+        dig
+        cachix
         freecad
         solvespace
 

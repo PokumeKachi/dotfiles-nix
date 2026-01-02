@@ -17,7 +17,10 @@
             vpl-gpu-rt
 
             vaapi-intel-hybrid
+            intel-media-driver
+
             libva
+            libva-utils
             libva-vdpau-driver
 
             mesa

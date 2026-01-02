@@ -15,19 +15,20 @@ _get_host: _set_host
     @cat /etc/nix-flake-hostname
 
 test:
-    nh os test {{FLAKE_PATH}}#$(just _get_host);
+    nh os test {{FLAKE_PATH}}#$(just _get_host)
 
 trace:
     nh os test {{FLAKE_PATH}}#$(just _get_host) --show-trace
 
 switch:
-    echo "you must restart after this"
+    @echo "you must restart after this"
     @read -p $'\033[1;31m[type \033[1;32m'"{{BUILD_PASS_PHRASE}}"$'\033[1;31m to confirm]\033[0m ' ans; \
     [ "$$ans" = "{{BUILD_PASS_PHRASE}}" ] || exit 0
     nh os switch {{FLAKE_PATH}}#$(just _get_host)
 
 update:
     nix flake update
+    nh os switch {{FLAKE_PATH}}#$(just _get_host) --upgrade
 
 clean:
     sudo nix-collect-garbage -d

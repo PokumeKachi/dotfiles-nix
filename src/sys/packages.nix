@@ -11,6 +11,11 @@ in
 
 {
     environment.systemPackages = with pkgs; [
+        librsvg
+        imagemagick
+        kitty
+        kitty-img
+
         page
         dig
         cachix

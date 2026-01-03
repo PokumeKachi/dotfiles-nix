@@ -1,14 +1,8 @@
 {
     pkgs,
-    way-edges,
-    youtube-tui,
-    tsui,
+    inputs,
     ...
 }:
-let
-    youtube_tui = youtube-tui;
-in
-
 {
     environment.systemPackages = with pkgs; [
         librsvg
@@ -22,12 +16,12 @@ in
         freecad
         solvespace
 
-        tsui.packages.${pkgs.stdenv.hostPlatform.system}.tsui
+        inputs.tsui.packages.${pkgs.stdenv.hostPlatform.system}.tsui
         nh
 
         noisetorch
         deskreen
-        youtube_tui.defaultPackage.${pkgs.stdenv.hostPlatform.system}
+        inputs.youtube-tui.defaultPackage.${pkgs.stdenv.hostPlatform.system}
         parsec-bin
         lighttpd
         litemdview
@@ -159,7 +153,7 @@ in
         kdePackages.kdenlive
         # way-edges
         # ibus-engines.bamboo
-        way-edges.packages.${pkgs.stdenv.hostPlatform.system}.default
+        inputs.way-edges.packages.${pkgs.stdenv.hostPlatform.system}.default
         easyeffects
         ironbar
 

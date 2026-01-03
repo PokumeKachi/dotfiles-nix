@@ -8,7 +8,6 @@
         kernelPackages = pkgs.linuxPackages;
 
         blacklistedKernelModules = [
-            "kvm-intel" # virtualization
             "firmware_attributes_class" # dell-only
             "tiny_power_button" # unnecessary
             "cec" # hdmi remote control, not needed on laptops

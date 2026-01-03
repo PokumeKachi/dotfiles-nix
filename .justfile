@@ -28,7 +28,7 @@ switch:
 
 update:
     nix flake update
-    nh os switch {{FLAKE_PATH}}#$(just _get_host) --upgrade
+    nh os switch --update {{FLAKE_PATH}}#$(just _get_host)
 
 clean:
     sudo nix-collect-garbage -d
@@ -36,6 +36,9 @@ clean:
 
 generations:
 	sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+hardware-configuration:
+    @sudo nixos-generate-config --show-hardware-config | tee src/$(just _get_host)/hardware-configuration.nix
 
 git:
     gitui

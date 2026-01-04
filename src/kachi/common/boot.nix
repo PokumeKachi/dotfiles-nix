@@ -5,8 +5,6 @@
 }:
 {
     boot = {
-        kernelPackages = pkgs.linuxPackages;
-
         blacklistedKernelModules = [
             "firmware_attributes_class" # dell-only
             "tiny_power_button" # unnecessary
@@ -27,14 +25,9 @@
             "vm.min_free_kbytes" = 65536; # ensure 64mb always free for stability
         };
     };
-    hardware.firmware = [ pkgs.linux-firmware ];
 
     boot.resumeDevice = "/dev/disk/by-uuid/aaf232ab-315b-4d52-850f-c625067a4e71";
     boot.kernelParams = [
-        "quiet"
-        "loglevel=3"
-        # "splash"
-
         "intel_pstate=active"
 
         "i915.enable_guc=2"
@@ -47,8 +40,6 @@
 
         "mem_sleep_default=deep" # "deep" or "s2idle" (deep for more battery life but slower wake time)
         "acpi_backlight=native"
-
-        # "resume=/dev/disk/by-uuid/aaf232ab-315b-4d52-850f-c625067a4e71"
     ];
 
     boot.initrd.kernelModules = [ "i915" ];
@@ -60,18 +51,4 @@
         "battery"
         "thermal"
     ]);
-
-    boot.loader = {
-        timeout = 1;
-        grub.enable = false;
-        efi = {
-            canTouchEfiVariables = false;
-            efiSysMountPoint = "/boot";
-        };
-        systemd-boot = {
-            enable = true;
-            configurationLimit = 50;
-            editor = false;
-        };
-    };
 }

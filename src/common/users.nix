@@ -7,13 +7,11 @@
         linger = true;
         extraGroups = [
             "audio"
-            "tss"
             "lp"
             "bluetooth"
             "networkmanager"
             "docker"
             "wheel"
-            "plocate"
             "dialout"
             "uucp"
             "video"

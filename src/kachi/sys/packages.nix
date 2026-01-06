@@ -5,6 +5,9 @@
 }:
 {
     environment.systemPackages = with pkgs; [
+        aegisub
+        just-lsp
+        nnn
         librsvg
         imagemagick
         kitty
@@ -109,7 +112,6 @@
         stress-ng
         sysstat
         pkg-config
-        docker
         taskwarrior3
         taskwarrior-tui
         swww

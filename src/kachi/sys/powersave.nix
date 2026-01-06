@@ -34,8 +34,8 @@
                 turbo = "auto";
 
                 enable_thresholds = true;
-                start_threshold = 60;
-                stop_threshold = 80;
+                start_threshold = 50;
+                stop_threshold = 60;
             };
         };
     };

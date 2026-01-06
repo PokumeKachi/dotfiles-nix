@@ -1,6 +1,5 @@
 {
     pkgs,
-    lib,
     ...
 }:
 {
@@ -8,13 +7,12 @@
     hardware.firmware = [ pkgs.linux-firmware ];
 
     boot.kernelParams = [
-        # "quiet"
         "loglevel=4"
         "systemd.show_status=auto"
         "ipv6.disable=0"
-        "reboot=k"
-        # default is acpi, others: k, warm, hard
     ];
+
+    systemd.services.kexec.enable = true;
 
     boot.loader = {
         timeout = 1;

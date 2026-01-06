@@ -10,7 +10,6 @@
             "lp"
             "bluetooth"
             "networkmanager"
-            "docker"
             "wheel"
             "dialout"
             "uucp"

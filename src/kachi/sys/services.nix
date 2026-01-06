@@ -67,34 +67,6 @@
 
     # we put slow services down here
 
-    # systemd.services.docker = {
-    #   enable = true;
-    #   wantedBy = [ ]; # no auto start at boot
-    #   serviceConfig = {
-    #     Type = lib.mkForce "simple";
-    #     TimeoutStartSec = 0;
-    #   };
-    # };
-    #
-    # systemd.timers.docker-delayed = {
-    #   wantedBy = [ "timers.target" ];
-    #   timerConfig = {
-    #     OnBootSec = "2min";
-    #     Unit = "docker.service";
-    #   };
-    # };
-
-    # systemd.services.docker = {
-    #   enable = true;
-    #   wantedBy = [ "multi-user.target" ];
-    #   after = [ "network-online.target" ];
-    # wants = [ "network-online.target" ];
-    #   serviceConfig = {
-    #     Type = lib.mkForce "simple";
-    #     TimeoutStartSec = 0;
-    #   };
-    # };
-
     # systemd.services.tlp = {
     #   enable = true;
     #   wantedBy = [ "multi-user.target" ];
@@ -105,12 +77,7 @@
     #     TimeoutStartSec = 0;
     #   };
     # };
-    #     systemd.services.docker = {
-    #   enable = true;
-    #   wantedBy = [ "multi-user.target" ];
-    #   after = [ "graphical.target" ]; # or "default.target"
-    # };
-    #
+
     # systemd.services.tlp = {
     #   enable = true;
     #   wantedBy = [ "multi-user.target" ];

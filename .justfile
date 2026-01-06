@@ -15,18 +15,25 @@ _get_host: _set_host
     @cat /etc/nix-flake-hostname
 
 test:
+    git add .
     nh os test {{FLAKE_PATH}}#$(just _get_host)
 
 trace:
+    git add .
     nh os test {{FLAKE_PATH}}#$(just _get_host) --show-trace
 
 switch:
+    git add .
     @echo "you must restart after this"
     @read -p $'\033[1;31m[type \033[1;32m'"{{BUILD_PASS_PHRASE}}"$'\033[1;31m to confirm]\033[0m ' ans; \
     [ "$$ans" = "{{BUILD_PASS_PHRASE}}" ] || exit 0
     nh os switch {{FLAKE_PATH}}#$(just _get_host)
+    @sudo -p "enter root password to update kexec kernel: " bash -c 'kexec -l /boot/EFI/nixos/*-bzImage.efi \
+        --initrd=$(ls -v /boot/EFI/nixos/*-initrd-linux-*.efi | tail -n1) \
+        --command-line="$(cat /proc/cmdline)"'
 
 update:
+    git add .
     nix flake update
     nh os switch --update {{FLAKE_PATH}}#$(just _get_host)
 

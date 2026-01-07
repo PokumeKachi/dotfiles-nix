@@ -6,10 +6,11 @@ _default:
     @just --choose
 
 _set_host:
-    @[ -f {{HOST_FILE}} ] || { \
-        read -r -p "hostname: " h; \
+    @h=$(cat {{HOST_FILE}} 2>/dev/null || echo ""); \
+    if [ -z "$h" ] || ! nix flake show --json . | jq -e --arg h "$h" 'has($h)' >/dev/null; then \
+        read -r -p "no compatible output name found, please input one: " h; \
         echo "$h" | sudo tee {{HOST_FILE}} >/dev/null; \
-    }
+    fi
 
 _get_host: _set_host
     @cat /etc/nix-flake-hostname

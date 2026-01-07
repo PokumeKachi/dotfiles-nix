@@ -47,6 +47,6 @@
                 };
         in
         {
-            kachi = nixosSystem ./src/kachi;
+            x1c6 = nixosSystem ./src/x1c6;
         };
 }

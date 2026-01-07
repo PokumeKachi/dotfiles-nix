@@ -13,7 +13,7 @@
                 # governor = "powersave";
                 governor = "performance";
                 # 0 - 255 (higher = more battery life)
-                energy_performance_preference = 160;
+                energy_performance_preference = 255;
                 # 0-15 (higher = more battery life)
                 energy_perf_bias = 10;
 
@@ -26,16 +26,15 @@
             };
             battery = {
                 governor = "powersave";
-                energy_performance_preference = 160;
-                energy_perf_bias = 10;
+                # energy_performance_preference = 160;
+                energy_performance_preference = 0;
+                energy_perf_bias = 15;
                 # scaling_min_freq =  400000;
                 # scaling_max_freq = 2400000;
                 # cpu becomes inefficient past 2.4 ghz
                 turbo = "auto";
 
                 enable_thresholds = true;
-                start_threshold = 50;
-                stop_threshold = 60;
             };
         };
     };
@@ -65,8 +64,8 @@
             SOUND_POWER_SAVE_ON_AC = 0;
             SOUND_POWER_SAVE_ON_BAT = 1;
 
-            # START_CHARGE_THRESH_BAT0 = 50;
-            # STOP_CHARGE_THRESH_BAT0 = 80;
+            START_CHARGE_THRESH_BAT0 = 55;
+            STOP_CHARGE_THRESH_BAT0 = 60;
 
             RESTORE_DEVICE_STATE_ON_STARTUP = 1;
             RESTORE_THRESHOLDS_ON_BAT = 1;

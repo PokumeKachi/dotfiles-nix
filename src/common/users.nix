@@ -9,7 +9,6 @@
             "audio"
             "lp"
             "bluetooth"
-            "networkmanager"
             "wheel"
             "dialout"
             "uucp"

@@ -3,9 +3,8 @@
     fileSystems."/".options = [
         "subvol=@"
         "noatime"
-        "compress=zstd"
         "x-systemd.fsck=no"
-        "ssd"
+        "compress=zstd"
         "discard=async"
         "space_cache=v2"
     ];
@@ -15,10 +14,9 @@
         fsType = "btrfs";
         options = [
             "subvol=@home"
-            "x-systemd.fsck=no"
             "noatime"
+            "x-systemd.fsck=no"
             "compress=zstd"
-            "ssd"
             "discard=async"
             "space_cache=v2"
         ];

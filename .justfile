@@ -29,7 +29,7 @@ switch:
     @read -p $'\033[1;31m[type \033[1;32m'"{{BUILD_PASS_PHRASE}}"$'\033[1;31m to confirm]\033[0m ' ans; \
     [ "$$ans" = "{{BUILD_PASS_PHRASE}}" ] || exit 0
     nh os switch {{FLAKE_PATH}}#$(just _get_host)
-    @sudo -p "enter root password to update kexec kernel: " bash -c 'kexec -l /boot/EFI/nixos/*-bzImage.efi \
+    sudo -p "enter root password to update kexec kernel: " bash -c 'kexec -l /boot/EFI/nixos/*-bzImage.efi \
         --initrd=$(ls -v /boot/EFI/nixos/*-initrd-linux-*.efi | tail -n1) \
         --command-line="$(cat /proc/cmdline)"'
 
@@ -46,7 +46,9 @@ generations:
 	sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 
 hardware-configuration:
-    @sudo nixos-generate-config --show-hardware-config | tee src/$(just _get_host)/hardware-configuration.nix
+    mkdir -p "src/$(just _get_host)/hardware"
+    @echo 'enter password...'
+    @sudo nixos-generate-config --show-hardware-config | tee "src/$(just _get_host)/hardware/configuration.nix"
 
 git:
     gitui

@@ -22,6 +22,8 @@
             lib = inputs.nixpkgs.lib;
             fs = lib.fileset;
 
+            hosts = lib.filterAttrs (n: t: t == "directory" && n != "common") (builtins.readDir ./src);
+
             getAllNixChildren = dir: fs.toList (fs.fileFilter (file: file.hasExt "nix") dir);
             nixosSystem =
                 hostConfig:
@@ -46,7 +48,10 @@
                     ];
                 };
         in
-        {
-            x1c6 = nixosSystem ./src/x1c6;
-        };
+
+        # x1c6 = nixosSystem ./src/x1c6;
+
+        lib.mapAttrs (name: _: nixosSystem (./src + "/${name}")) hosts
+
+    ;
 }

@@ -8,7 +8,6 @@
         extraGroups = [
             "audio"
             "lp"
-            "bluetooth"
             "wheel"
             "dialout"
             "uucp"

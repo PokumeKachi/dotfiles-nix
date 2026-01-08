@@ -46,9 +46,9 @@ generations:
 	sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 
 hardware-configuration:
-    mkdir -p "src/$(just _get_host)/hardware"
+    mkdir -p "src/$(just _get_host)/os"
     @echo 'enter password...'
-    @sudo nixos-generate-config --show-hardware-config | tee "src/$(just _get_host)/hardware/configuration.nix"
+    @sudo nixos-generate-config --show-hardware-config | tee "src/$(just _get_host)/os/configuration.nix"
 
 git:
     gitui

@@ -9,6 +9,8 @@
 
         SUBSYSTEM=="input", ATTR{name}=="AT Translated Set 2 keyboard", ATTR{power/wakeup}="enabled"
         # SUBSYSTEM=="usb", ATTR{power/wakeup}=="enabled", ATTR{name}!="AT Translated Set 2 keyboard", ATTR{power/wakeup}="disabled"
-        SUBSYSTEM=="input", ATTR{name}!="AT Translated Set 2 keyboard", ATTR{power/wakeup}="disabled"
+        # SUBSYSTEM=="input", ATTR{name}!="AT Translated Set 2 keyboard", ATTR{power/wakeup}="disabled"
+        # SUBSYSTEM=="input", KERNEL=="event*", ATTR{power/wakeup}="disabled"
+        SUBSYSTEM=="input", KERNEL=="event*", ATTR{name}!="AT Translated Set 2 keyboard", ATTR{power/wakeup}="disabled"
     '';
 }

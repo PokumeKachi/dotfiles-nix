@@ -5,10 +5,6 @@
         "modesetting"
     ];
 
-    boot.kernelParams = [ "i915.force_probe=46d1,i915.enable_guc=3" ];
-
-    boot.kernelModules = [ "i915" ];
-
     hardware = {
         enableAllFirmware = true;
         intel-gpu-tools.enable = true;

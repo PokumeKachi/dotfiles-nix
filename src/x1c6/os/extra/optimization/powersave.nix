@@ -1,4 +1,8 @@
 {
+    environment.systemPackages = with pkgs; [
+        upower
+    ];
+
     services = {
         thermald.enable = true;
         auto-cpufreq = {

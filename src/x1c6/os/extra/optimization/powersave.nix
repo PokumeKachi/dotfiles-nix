@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
     environment.systemPackages = with pkgs; [
         upower
@@ -8,21 +9,33 @@
         auto-cpufreq = {
             enable = true;
             settings = {
+                # charger = {
+                #     # powersave performance
+                #     # governor = "powersave";
+                #     governor = "performance";
+                #     # 0 - 255 (higher = more battery life)
+                #     energy_performance_preference = 255;
+                #     # 0-15 (higher = more battery life)
+                #     energy_perf_bias = 10;
+                #
+                #     # scaling_min_freq = 400000;
+                #     # scaling_max_freq = 1600000;
+                #
+                #     # always, auto, never
+                #     # turbo = "always";
+                #     turbo = "auto";
+                # };
                 charger = {
-                    # powersave performance
-                    # governor = "powersave";
-                    governor = "performance";
-                    # 0 - 255 (higher = more battery life)
-                    energy_performance_preference = 255;
-                    # 0-15 (higher = more battery life)
-                    energy_perf_bias = 10;
-
-                    # scaling_min_freq = 400000;
-                    # scaling_max_freq = 1600000;
-
-                    # always, auto, never
-                    # turbo = "always";
+                    governor = "powersave";
+                    # energy_performance_preference = 160;
+                    energy_performance_preference = 0;
+                    energy_perf_bias = 15;
+                    # cpu becomes inefficient past 2.4 ghz
+                    # scaling_min_freq =  400000;
+                    # scaling_max_freq = 2400000;
                     turbo = "auto";
+
+                    enable_thresholds = true;
                 };
                 battery = {
                     governor = "powersave";

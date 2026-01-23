@@ -121,7 +121,7 @@
         nwg-drawer
         # electrum
         swaybg
-        aseprite
+        # aseprite
         otf2bdf
         bdf2psf
         libinput
@@ -132,7 +132,6 @@
         lsof
         wev
         usbutils
-        zed-editor
 
         arduino-cli
         electron

@@ -24,6 +24,7 @@
         };
         resumeDevice = "/dev/disk/by-uuid/aaf232ab-315b-4d52-850f-c625067a4e71";
         kernelParams = [
+            "i915.enable_psr=0"
             "intel_pstate=active"
             "mem_sleep_default=deep" # "deep" or "s2idle" (deep for more battery life but slower wake time)
             "acpi_backlight=native"

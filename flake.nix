@@ -16,7 +16,7 @@
     };
 
     outputs =
-        inputs:
+        inputs@{ self, ... }:
         let
             system = "x86_64-linux";
             lib = inputs.nixpkgs.lib;
@@ -30,7 +30,7 @@
                 lib.nixosSystem {
                     system = system;
                     specialArgs = {
-                        inherit inputs;
+                        inherit inputs self;
                     };
                     modules = [
                         inputs.nix-flatpak.nixosModules.nix-flatpak

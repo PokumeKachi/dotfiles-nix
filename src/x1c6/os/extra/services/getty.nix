@@ -1,13 +1,14 @@
-{ pkgs, ... }:
+{ self, pkgs, ... }:
 {
     # services.getty = {
-    # autologinuser = "kachi";
-    # greetingLine = "this is thinkpad";
-    # greetingLine = builtins.readFile ../assets/startup.txt;
-    # helpLine = "hope ur ready";
+    # # autologinUser = "kachi";
+    # # greetingLine = "this is thinkpad";
+    # # greetingLine = builtins.readFile ../../../../assets/startup.txt;
+    # greetingLine = builtins.readFile "${self}/assets/startup.txt";
+    # # helpLine = "hope ur ready";
     # };
 
-    # environment.etc."issue".text = builtins.readFile ../assets/startup.txt;
+    environment.etc."issue".text = builtins.readFile "${self}/assets/startup.txt";
 
     # systemd.services.boot-sound = {
     #     enable = true;

@@ -4,7 +4,7 @@
 #         "gitconfig".text = ''
 #             [user]
 #               name = PokumeKachi
-#               email = pokumekachi@disroot.org
+#               email = 108186213+PokumeKachi@users.noreply.github.com
 #             [core]
 #               symlinks = true
 #             [credential]
@@ -23,7 +23,7 @@
 # }
 { config, ... }:
 let
-    email = "pokumekachi@disroot.org";
+    email = "108186213+PokumeKachi@users.noreply.github.com";
 
     # keysDir = ../assets/ssh-keys;
     # dir = builtins.readDir keysDir;

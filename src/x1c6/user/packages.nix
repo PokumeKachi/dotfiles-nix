@@ -31,7 +31,6 @@
         geteltorito
         nvme-cli
         efibootmgr
-        prettierd
         shfmt
 
         keepassxc

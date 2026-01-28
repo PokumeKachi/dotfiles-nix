@@ -1,7 +1,9 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    nodejs
-    nodePackages.markdownlint-cli2
-    nodePackages.prettier
-  ];
+{ pkgs, ... }:
+{
+    environment.systemPackages = with pkgs; [
+        nodePackages.markdownlint-cli2
+        nodePackages.prettier
+        prettierd
+        prettier
+    ];
 }

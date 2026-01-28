@@ -10,8 +10,6 @@
         stylua
         lua-language-server
         typescript-language-server
-        nodejs
-        typescript
         marksman
         nixpkgs-fmt
         vscode-langservers-extracted

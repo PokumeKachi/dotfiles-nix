@@ -3,10 +3,10 @@
         enable = true;
         packages = [
             "org.vinegarhq.Vinegar"
-            "org.vinegarhq.Sober"
             "com.moonlight_stream.Moonlight"
             "ru.yandex.Browser"
             "com.opera.Opera"
+"net.audiorelay.AudioRelay"
         ];
         remotes = [
             {

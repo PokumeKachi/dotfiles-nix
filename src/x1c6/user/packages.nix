@@ -62,7 +62,7 @@
         nixd
         nixfmt-rfc-style
         gimp
-        discord
+        vesktop
         pebble
         mold
         ltex-ls

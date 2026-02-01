@@ -2,7 +2,7 @@
     networking = {
         useNetworkd = true;
         wireless.iwd.enable = true;
-        firewall.enable = true;
+        firewall.enable = false;
 
     };
 

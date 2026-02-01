@@ -15,10 +15,10 @@
 
             "fs.suid_dumpable" = 0;
 
-            "vm.swappiness" = 10;
+            "vm.swappiness" = 120;
             "vm.page-cluster" = 0;
-            "vm.vfs_cache_pressure" = 50; # keep inode/dentry cache longer
-            "vm.dirty_ratio" = 10; # less dirty data before writeback
+            "vm.vfs_cache_pressure" = 67; # keep inode/dentry cache longer
+            "vm.dirty_ratio" = 5; # less dirty data before writeback
             "vm.dirty_background_ratio" = 5; # start background writeback sooner
             "vm.min_free_kbytes" = 65536; # ensure 64mb always free for stability
         };
@@ -31,6 +31,7 @@
         ];
         initrd.kernelModules = [ "i915" ];
         kernelModules = lib.mkOverride 1000 ([
+            "snd-hda-intel"
             "intel_idle"
             "processor"
             "resume"
@@ -38,5 +39,8 @@
             "battery"
             "thermal"
         ]);
+        extraModprobeConfig = ''
+            options snd-hda-intel model=thinkpad
+        '';
     };
 }

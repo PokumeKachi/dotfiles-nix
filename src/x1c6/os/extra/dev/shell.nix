@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
     environment = {
         systemPackages = with pkgs; [
@@ -12,8 +13,7 @@
             delta
             sd
 
-            xsv
-            mlr
+            miller
 
             btop
         ];

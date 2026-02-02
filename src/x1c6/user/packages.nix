@@ -170,16 +170,9 @@
         tree-sitter
         nfs-utils
 
-        # terminal tools
-        bat
-        fd
-        ripgrep
-
         fzf
 
-        lsd
         eza
-        dua
         procs
 
         newt
@@ -192,7 +185,6 @@
         onlyoffice-desktopeditors
 
         wget
-        btop
         wmenu
         fastfetch
         pfetch-rs

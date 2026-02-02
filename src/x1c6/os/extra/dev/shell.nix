@@ -1,5 +1,22 @@
 {
     environment = {
+        systemPackages = with pkgs; [
+            bat
+            ripgrep
+            fd
+
+            dua
+            duf
+
+            procs
+            delta
+            sd
+
+            xsv
+            mlr
+
+            btop
+        ];
         variables = {
             PATH = "$HOME/.local/bin:$HOME/.cargo/bin:$PATH";
 
@@ -10,11 +27,15 @@
 
         };
         shellAliases = {
+            cat = "bat";
             grep = "rg";
-            ls = "lsd";
+            ls = "eza";
+            find = "fd";
+
             du = "dua i";
+            df = "duf";
+
             gpt = "tgpt -m";
-            vim = "nvim";
         };
     };
 }

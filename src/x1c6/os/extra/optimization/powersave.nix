@@ -26,10 +26,10 @@
                 #     turbo = "auto";
                 # };
                 charger = {
-                    governor = "performance";
+                    governor = "powersave";
                     # energy_performance_preference = 160;
                     energy_performance_preference = 0;
-                    energy_perf_bias = 0;
+                    energy_perf_bias = 15;
                     # cpu becomes inefficient past 2.4 ghz
                     # scaling_min_freq =  400000;
                     # scaling_max_freq = 2400000;

@@ -29,7 +29,7 @@
         shellAliases = {
             cat = "bat";
             grep = "rg";
-            ls = "eza";
+            ls = "eza --icons";
             find = "fd";
 
             du = "dua i";

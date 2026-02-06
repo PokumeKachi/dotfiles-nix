@@ -53,6 +53,9 @@ let
         "https://chat.deepseek.com" = "DeepSeek";
         "https://gemini.google.com/app" = "Google Gemini";
         "https://chat.groq.com" = "Groq Chat";
+
+        "https://fmhy.net" = "FreeMediaHeckYeah";
+        "https://webwhiteboard.com" = "Whiteboard";
     };
 
     getName =

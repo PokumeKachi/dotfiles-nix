@@ -25,7 +25,6 @@
         noisetorch
         deskreen
         inputs.youtube-tui.defaultPackage.${pkgs.stdenv.hostPlatform.system}
-        parsec-bin
         lighttpd
         litemdview
         geteltorito

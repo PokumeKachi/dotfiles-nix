@@ -8,7 +8,6 @@
     # ];
 
     environment.systemPackages = with pkgs; [
-        rojo
         protonup-qt
         protonup-ng
     ];

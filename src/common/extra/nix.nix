@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
     nix = {
         optimise.automatic = true;
@@ -24,4 +25,8 @@
     };
 
     documentation.enable = false;
+
+    environment.systemPackages = with pkgs; [
+        nix-fast-build
+    ];
 }

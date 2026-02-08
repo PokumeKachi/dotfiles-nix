@@ -15,16 +15,18 @@ _set_host:
 _get_host: _set_host
     @cat /etc/nix-flake-hostname
 
-test:
-    git add .
+_prebuild:
+    # git add .
+    # nix-fast-build --flake {{FLAKE_PATH}}#$(just _get_host).config.system.build.toplevel
+
+
+test: _prebuild
     nh os test {{FLAKE_PATH}}#$(just _get_host)
 
-trace:
-    git add .
+trace: _prebuild
     nh os test {{FLAKE_PATH}}#$(just _get_host) --show-trace
 
-switch:
-    git add .
+switch: _prebuild
     @echo "you must restart after this"
     @read -p $'\033[1;31m[type \033[1;32m'"{{BUILD_PASS_PHRASE}}"$'\033[1;31m to confirm]\033[0m ' ans; \
     [ "$$ans" = "{{BUILD_PASS_PHRASE}}" ] || exit 0
@@ -33,8 +35,7 @@ switch:
         --initrd=$(ls -v /boot/EFI/nixos/*-initrd-linux-*.efi | tail -n1) \
         --command-line="$(cat /proc/cmdline)"'
 
-update:
-    git add .
+update: _prebuild
     nix flake update
     nh os switch --update {{FLAKE_PATH}}#$(just _get_host)
 

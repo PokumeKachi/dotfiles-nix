@@ -13,7 +13,9 @@
             "uucp"
             "video"
             "tty"
+
             "input"
+
         ];
     };
 }

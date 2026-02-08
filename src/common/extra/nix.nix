@@ -28,6 +28,6 @@
 
     environment.systemPackages = with pkgs; [
         nix-fast-build
-        inputs.nix-evaluator-stats.packages.${pkgs.stdenv.hostPlatform.system}.default
+        # inputs.nix-evaluator-stats.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 }

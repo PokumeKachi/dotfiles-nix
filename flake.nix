@@ -45,7 +45,7 @@
 
                             imports = [
                                 ./src/common/imports.nix
-                                # (import (hostConfig + "/imports.nix"))
+                                (import (hostConfig + "/imports.nix"))
                             ];
 
                             # imports = builtins.concatLists [

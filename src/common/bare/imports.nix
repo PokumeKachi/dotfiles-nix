@@ -7,5 +7,5 @@
         ./nixpkgs.nix
         ./system.nix
         ./users.nix
-    ]
+    ];
 }

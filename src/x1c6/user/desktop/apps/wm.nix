@@ -1,5 +1,42 @@
 { pkgs, ... }:
 {
+    # programs.niri.settings = {
+    #   outputs."eDP-1".scale = 1.0;
+    # };
+
+    programs.niri = {
+        enable = true;
+    };
+
+    # wayland.windowManager.sway = {
+    #   enable = true;
+    #
+    #   config = rec {
+    #   modifier = "Mod4";
+    #     input = {
+    #       "2:10:TPPS/2_Elan_TrackPoint" = {
+    #         accel_profile = "adaptive";
+    #         pointer_accel = "1.0";
+    #       };
+    #     };
+    #   };
+    # };
+    environment.systemPackages = with pkgs; [
+
+        wayland
+        wayland-protocols
+        xwayland
+        xwayland-run
+        xwayland-satellite
+
+        egl-wayland
+        libGL
+        libGLU
+
+        glib
+        glibc
+
+    ];
     services.libinput.enable = true;
 
     # services.desktopManager.cosmic.enable = true;

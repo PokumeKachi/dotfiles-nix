@@ -4,9 +4,7 @@
         packages = [
             "org.vinegarhq.Vinegar"
             "com.moonlight_stream.Moonlight"
-            "ru.yandex.Browser"
-            "com.opera.Opera"
-"net.audiorelay.AudioRelay"
+            "net.audiorelay.AudioRelay"
         ];
         remotes = [
             {

@@ -13,14 +13,14 @@
                 "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
                 "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM="
             ];
-            max-jobs = "auto";
+            max-jobs = 64;
             cores = 0;
             fallback = true;
         };
-        extraOptions = ''
-            eval-cores = 0
-            extra-experimental-features = parallel-eval
-        '';
+        # extraOptions = ''
+        #     eval-cores = 0
+        #     extra-experimental-features = parallel-eval
+        # '';
     };
 
     documentation.enable = false;

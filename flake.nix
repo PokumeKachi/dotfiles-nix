@@ -37,7 +37,7 @@
                     modules = [
                         inputs.nix-flatpak.nixosModules.nix-flatpak
                         inputs.stylix.nixosModules.stylix
-                        inputs.determinate.nixosModules.default
+                        # inputs.determinate.nixosModules.default
                         {
                             # nixpkgs.overlays = [
                             #     inputs.nur.overlays.default

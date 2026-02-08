@@ -27,6 +27,7 @@ in
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
         "text/html" = "firefox.desktop";
+        "image/webp" = "imv.desktop";
 
         "x-scheme-handler/about" = "firefox.desktop";
         "x-scheme-handler/unknown" = "firefox.desktop";

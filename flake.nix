@@ -9,6 +9,7 @@
         nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
         stylix.url = "github:nix-community/stylix/release-25.11";
         nur.url = "github:nix-community/NUR";
+        determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
         # apps
         youtube-tui.url = "github:Siriusmart/youtube-tui";
@@ -21,11 +22,11 @@
         let
             system = "x86_64-linux";
             lib = inputs.nixpkgs.lib;
-            fs = lib.fileset;
+            hosts = {
+                x1c6 = ./src/x1c6;
+                t410 = ./src/t410;
+            };
 
-            hosts = lib.filterAttrs (n: t: t == "directory" && n != "common") (builtins.readDir ./src);
-
-            getAllNixChildren = dir: fs.toList (fs.fileFilter (file: file.hasExt "nix") dir);
             nixosSystem =
                 hostConfig:
                 lib.nixosSystem {
@@ -36,23 +37,26 @@
                     modules = [
                         inputs.nix-flatpak.nixosModules.nix-flatpak
                         inputs.stylix.nixosModules.stylix
+                        inputs.determinate.nixosModules.default
                         {
-                            nixpkgs.overlays = [
-                                inputs.nur.overlays.default
+                            # nixpkgs.overlays = [
+                            #     inputs.nur.overlays.default
+                            # ];
+
+                            imports = [
+                                ./src/common/imports.nix
+                                # (import (hostConfig + "/imports.nix"))
                             ];
 
-                            imports = builtins.concatLists [
-                                (getAllNixChildren ./src/common)
-                                (getAllNixChildren hostConfig)
-                            ];
+                            # imports = builtins.concatLists [
+                            #     (getAllNixChildren ./src/common)
+                            #     (getAllNixChildren hostConfig)
+                            # ];
                         }
                     ];
                 };
         in
-
-        # x1c6 = nixosSystem ./src/x1c6;
-
-        lib.mapAttrs (name: _: nixosSystem (./src + "/${name}")) hosts
+        lib.mapAttrs (_: path: nixosSystem path) hosts
 
     ;
 }

@@ -27,8 +27,7 @@
                 # };
                 charger = {
                     governor = "powersave";
-                    # energy_performance_preference = 160;
-                    energy_performance_preference = 140;
+                    energy_performance_preference = 170;
                     energy_perf_bias = 15;
                     # cpu becomes inefficient past 2.4 ghz
                     # scaling_min_freq =  400000;
@@ -39,8 +38,7 @@
                 };
                 battery = {
                     governor = "powersave";
-                    # energy_performance_preference = 160;
-                    energy_performance_preference = 140;
+                    energy_performance_preference = 170;
                     energy_perf_bias = 15;
                     # cpu becomes inefficient past 2.4 ghz
                     # scaling_min_freq =  400000;
@@ -77,8 +75,8 @@
                 SOUND_POWER_SAVE_ON_AC = 0;
                 SOUND_POWER_SAVE_ON_BAT = 1;
 
-                START_CHARGE_THRESH_BAT0 = 75;
-                STOP_CHARGE_THRESH_BAT0 = 80;
+                START_CHARGE_THRESH_BAT0 = 60;
+                STOP_CHARGE_THRESH_BAT0 = 65;
 
                 RESTORE_DEVICE_STATE_ON_STARTUP = 1;
                 RESTORE_THRESHOLDS_ON_BAT = 1;

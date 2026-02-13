@@ -2,8 +2,6 @@
     services.flatpak = {
         enable = true;
         packages = [
-            "org.vinegarhq.Vinegar"
-            "com.moonlight_stream.Moonlight"
             "net.audiorelay.AudioRelay"
         ];
         remotes = [

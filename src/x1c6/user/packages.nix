@@ -5,6 +5,7 @@
 }:
 {
     environment.systemPackages = with pkgs; [
+        moonlight-qt
         aegisub
         just-lsp
         nnn

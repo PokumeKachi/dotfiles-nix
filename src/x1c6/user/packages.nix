@@ -6,6 +6,7 @@
 {
     environment.systemPackages = with pkgs; [
         moonlight-qt
+        vinegar
         aegisub
         just-lsp
         nnn

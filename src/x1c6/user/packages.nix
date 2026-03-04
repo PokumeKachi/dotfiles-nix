@@ -28,7 +28,6 @@
         deskreen
         inputs.youtube-tui.defaultPackage.${pkgs.stdenv.hostPlatform.system}
         lighttpd
-        litemdview
         geteltorito
         nvme-cli
         efibootmgr
@@ -59,7 +58,6 @@
         tgpt
 
         zk
-        xournalpp
         nixd
         nixfmt-rfc-style
         gimp

@@ -66,4 +66,15 @@
     environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
 
     hardware.cpu.intel.updateMicrocode = true;
+
+    # video codecs
+    environment.systemPackages = with pkgs; [
+        ffmpeg
+        gst_all_1.gstreamer
+        gst_all_1.gst-libav
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-bad
+        gst_all_1.gst-plugins-ugly
+    ];
 }

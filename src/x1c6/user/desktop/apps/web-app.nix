@@ -9,6 +9,7 @@ let
         "https://app.cinny.in/" = "Cinny";
 
         "https://deepwiki.com/" = "DeepWiki";
+        "https://empire.edu.vn/user/my-course" = "Empire Team VACT";
 
         "https://dmoj.ca/" = "DMOJ";
         "https://codeforces.com/" = "CodeForces";

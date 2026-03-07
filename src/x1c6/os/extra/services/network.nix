@@ -1,4 +1,9 @@
+{ pkgs, ... }:
 {
+    environment.systemPackages = with pkgs; [
+        impala
+    ];
+
     networking = {
         hostName = "kachi";
         firewall = {

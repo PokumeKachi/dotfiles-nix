@@ -2,6 +2,8 @@
 {
     environment = {
         systemPackages = with pkgs; [
+            trash-cli
+
             bat
             ripgrep
             fd
@@ -27,6 +29,8 @@
 
         };
         shellAliases = {
+            rm = "trash";
+
             cat = "bat";
             grep = "rg";
             ls = "eza --icons";

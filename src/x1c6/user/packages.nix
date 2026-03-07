@@ -150,9 +150,8 @@
         man-pages
         man-pages-posix
         kdePackages.kdenlive
-        # way-edges
         # ibus-engines.bamboo
-        inputs.way-edges.packages.${pkgs.stdenv.hostPlatform.system}.default
+        # inputs.way-edges.packages.${pkgs.stdenv.hostPlatform.system}.default
         easyeffects
         ironbar
 

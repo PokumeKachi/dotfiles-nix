@@ -13,7 +13,7 @@
 
         # apps
         youtube-tui.url = "github:Siriusmart/youtube-tui";
-        way-edges.url = "github:way-edges/way-edges";
+        # way-edges.url = "github:way-edges/way-edges";
         tsui.url = "github:neuralink/tsui";
         polymc.url = "github:PolyMC/PolyMC";
     };

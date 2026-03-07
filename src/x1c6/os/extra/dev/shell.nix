@@ -2,6 +2,11 @@
 {
     environment = {
         systemPackages = with pkgs; [
+            fzy
+            skim
+            television
+            fzf
+            fzf-make
             trash-cli
 
             bat
@@ -29,6 +34,7 @@
 
         };
         shellAliases = {
+            make = "fzf-make";
             rm = "trash";
 
             cat = "bat";

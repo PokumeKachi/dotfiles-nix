@@ -1,5 +1,6 @@
 {
     imports = [
+        ./android.nix
         ./dbus.nix
         ./fingerprint.nix
         ./flatpak.nix
@@ -7,6 +8,7 @@
         ./mako.nix
         ./pipewire.nix
         ./polkit.nix
+        ./printing.nix
         ./services.nix
         ./soundwire.nix
         ./swayidle.nix

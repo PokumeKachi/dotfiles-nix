@@ -13,6 +13,7 @@
         ./soundwire.nix
         ./swayidle.nix
         ./tailscale.nix
+        ./torrent.nix
         ./xdg.nix
     ];
 }

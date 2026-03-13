@@ -49,6 +49,7 @@
         hyprlauncher
         hyprsunset
         hyprpolkitagent
+        hyprnome
     ];
     services.libinput.enable = true;
 

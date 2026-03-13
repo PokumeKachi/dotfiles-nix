@@ -8,6 +8,13 @@
         enable = true;
     };
 
+    programs.hyprland = {
+        enable = true;
+        portalPackage =  pkgs.xdg-desktop-portal-hyprland;
+    };
+
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
     # wayland.windowManager.sway = {
     #   enable = true;
     #
@@ -37,6 +44,11 @@
         glib
         glibc
 
+        hyprpaper
+        hyprmon
+        hyprlauncher
+        hyprsunset
+        hyprpolkitagent
     ];
     services.libinput.enable = true;
 

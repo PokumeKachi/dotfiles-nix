@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
     # programs.niri.settings = {
     #   outputs."eDP-1".scale = 1.0;
@@ -8,9 +8,13 @@
         enable = true;
     };
 
-    programs.hyprland = {
+    # programs.hyprland = {
+    #     enable = true;
+    #     portalPackage =  pkgs.xdg-desktop-portal-hyprland;
+    # };
+    wayland.windowManager.hyprland = {
         enable = true;
-        portalPackage =  pkgs.xdg-desktop-portal-hyprland;
+        plugins = [ inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors ];
     };
 
     environment.sessionVariables.NIXOS_OZONE_WL = "1";

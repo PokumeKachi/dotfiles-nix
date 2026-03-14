@@ -16,6 +16,12 @@
         # way-edges.url = "github:way-edges/way-edges";
         tsui.url = "github:neuralink/tsui";
         polymc.url = "github:PolyMC/PolyMC";
+
+        hyprland.url = "github:hyprwm/Hyprland"; # follows development branch of hyprland
+        hypr-dynamic-cursors = {
+            url = "github:VirtCode/hypr-dynamic-cursors";
+            inputs.hyprland.follows = "hyprland"; # to make sure that the plugin is built for the correct version of hyprland
+        };
     };
 
     outputs =

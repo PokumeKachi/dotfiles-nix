@@ -14,5 +14,6 @@
         nixpkgs-fmt
         vscode-langservers-extracted
         rust-analyzer
+        texlivePackages.latexindent
     ];
 }

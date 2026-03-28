@@ -26,7 +26,7 @@
 
         noisetorch
         deskreen
-        inputs.youtube-tui.defaultPackage.${pkgs.stdenv.hostPlatform.system}
+        # inputs.youtube-tui.defaultPackage.${pkgs.stdenv.hostPlatform.system}
         lighttpd
         geteltorito
         nvme-cli
@@ -87,7 +87,6 @@
         imlib2
         busybox
         iputils
-        youtube-tui
         nmap
         inotify-tools
         ninja
@@ -210,7 +209,7 @@
         tor-browser
         tor
         firefox
-        ungoogled-chromium
+        chromium
 
         # git tools
 

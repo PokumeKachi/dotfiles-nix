@@ -8,7 +8,6 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
-        wireplumber.enable = true;
         jack.enable = true;
 
         extraConfig.pipewire = {
@@ -24,12 +23,23 @@
                 };
             };
         };
-        wireplumber.extraConfig = ''
-            include /usr/share/wireplumber/main.lua.d/50-alsa-config.lua
-            -- Auto-switch on new devices
-            settings = {
-              alsa.auto_switch = true
-            }
-        '';
+
+        wireplumber = {
+            enable = true;
+            extraConfig = {
+                "10-autoswitch" = {
+                    "monitor.alsa.rules" = [
+                        {
+                            matches = [ { "node.name" = "~alsa_output.*"; } ];
+                            actions = {
+                                update-props = {
+                                    "alsa.auto-switch" = true;
+                                };
+                            };
+                        }
+                    ];
+                };
+            };
+        };
     };
 }

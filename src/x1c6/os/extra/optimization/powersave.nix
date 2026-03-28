@@ -75,8 +75,8 @@
                 SOUND_POWER_SAVE_ON_AC = 0;
                 SOUND_POWER_SAVE_ON_BAT = 1;
 
-                START_CHARGE_THRESH_BAT0 = 60;
-                STOP_CHARGE_THRESH_BAT0 = 65;
+                START_CHARGE_THRESH_BAT0 = 75;
+                STOP_CHARGE_THRESH_BAT0 = 80;
 
                 RESTORE_DEVICE_STATE_ON_STARTUP = 1;
                 RESTORE_THRESHOLDS_ON_BAT = 1;

@@ -27,37 +27,26 @@
                 x1c6 = ./src/x1c6;
                 t410 = ./src/t410;
             };
-
             nixosSystem =
                 hostConfig:
                 lib.nixosSystem {
                     system = system;
-                    specialArgs = {
-                        inherit inputs self;
-                    };
+                    specialArgs = { inherit inputs self; };
                     modules = [
                         inputs.nix-flatpak.nixosModules.nix-flatpak
                         inputs.stylix.nixosModules.stylix
-                        # inputs.determinate.nixosModules.default
                         {
-                            # nixpkgs.overlays = [
-                            #     inputs.nur.overlays.default
-                            # ];
-
                             imports = [
                                 ./src/common/imports.nix
                                 (import (hostConfig + "/imports.nix"))
                             ];
-
-                            # imports = builtins.concatLists [
-                            #     (getAllNixChildren ./src/common)
-                            #     (getAllNixChildren hostConfig)
-                            # ];
                         }
                     ];
                 };
         in
-        lib.mapAttrs (_: path: nixosSystem path) hosts
+        {
+            nixosConfigurations = lib.mapAttrs (_: path: nixosSystem path) hosts;
+        }
 
     ;
 }

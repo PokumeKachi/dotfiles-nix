@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 let
-    browser = "firefox";
-    args = "-new-window ";
+    browser = "chromium";
+    args = "--app=";
 
     apps = {
         "https://chat.zalo.me/" = "Zalo";

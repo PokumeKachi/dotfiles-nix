@@ -210,6 +210,7 @@
         tor
         firefox
         chromium
+        microsoft-edge
 
         # git tools
 

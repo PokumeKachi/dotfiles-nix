@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 let
-    browser = "chromium";
+    browser = "microsoft-edge";
     args = "--app=";
 
     apps = {
@@ -25,6 +25,7 @@ let
         "https://chess.com/play/online/new" = "Chess";
 
         "https://youtube.com" = "YouTube";
+        "https://notion.so" = "Notion";
         "https://meet.jit.si/" = "Jitsi Meet";
         "https://mail.proton.me" = "Proton Mail";
         "https://doc.rust-lang.org/stable/book" = "The Rust Book";

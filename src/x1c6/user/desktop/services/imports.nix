@@ -6,6 +6,7 @@
         ./flatpak.nix
         ./kwallet.nix
         ./mako.nix
+        ./ollama.nix
         ./pipewire.nix
         ./polkit.nix
         ./printing.nix

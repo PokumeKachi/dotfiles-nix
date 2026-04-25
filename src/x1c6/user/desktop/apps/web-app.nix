@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 let
     browser = "microsoft-edge";
-    args = "--app=";
+    args = "--enable-features=UseOzonePlatform --ozone-platform=wayland --app=";
 
     apps = {
         "https://chat.zalo.me/" = "Zalo";

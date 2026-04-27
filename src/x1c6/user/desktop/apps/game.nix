@@ -6,6 +6,7 @@
 {
     environment.systemPackages = with pkgs; [
         inputs.polymc.packages.${pkgs.stdenv.hostPlatform.system}.polymc
+        javaPackages.compiler.temurin-bin.jre-25
         javaPackages.compiler.temurin-bin.jre-21
         javaPackages.compiler.temurin-bin.jre-17
         javaPackages.compiler.temurin-bin.jre-8

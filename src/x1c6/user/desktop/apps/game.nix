@@ -6,10 +6,9 @@
 {
     environment.systemPackages = with pkgs; [
         inputs.polymc.packages.${pkgs.stdenv.hostPlatform.system}.polymc
-        jdk25
-        jdk21
-        jdk17
-        jdk8
+        javaPackages.compiler.temurin-bin.jre-21
+        javaPackages.compiler.temurin-bin.jre-17
+        javaPackages.compiler.temurin-bin.jre-8
         itch
         protonup-qt
         protonup-ng

@@ -1,4 +1,10 @@
+{ pkgs, ... }:
 {
+    environment.systemPackages = with pkgs; [
+        pwvucontrol
+        wiremix
+    ];
+
     hardware.alsa.enablePersistence = true;
     security.rtkit.enable = true;
     services.pulseaudio.enable = false;

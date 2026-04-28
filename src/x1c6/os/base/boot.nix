@@ -15,7 +15,8 @@
 
             "fs.suid_dumpable" = 0;
 
-            "vm.swappiness" = 120;
+            "vm.swappiness" = 100;
+            "vm.compaction_proactiveness" = 0;
             "vm.page-cluster" = 0;
             "vm.vfs_cache_pressure" = 67; # keep inode/dentry cache longer
             "vm.dirty_ratio" = 5; # less dirty data before writeback

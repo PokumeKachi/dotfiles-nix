@@ -7,6 +7,7 @@
         ./kwallet.nix
         ./mako.nix
         ./ollama.nix
+        ./openrgb.nix
         ./pipewire.nix
         ./polkit.nix
         ./printing.nix

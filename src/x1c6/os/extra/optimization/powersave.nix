@@ -9,33 +9,33 @@
         auto-cpufreq = {
             enable = true;
             settings = {
-                # charger = {
-                #     # powersave performance
-                #     # governor = "powersave";
-                #     governor = "performance";
-                #     # 0 - 255 (higher = more battery life)
-                #     energy_performance_preference = 0;
-                #     # 0-15 (higher = more battery life)
-                #     energy_perf_bias = 0;
-                #
-                #     # scaling_min_freq = 400000;
-                #     # scaling_max_freq = 1600000;
-                #
-                #     # always, auto, never
-                #     turbo = "always";
-                # };
                 charger = {
+                    # powersave performance
                     # governor = "powersave";
-                    governor = "powersave";
-                    energy_performance_preference = 170;
-                    energy_perf_bias = 15;
-                    # cpu becomes inefficient past 2.4 ghz
-                    # scaling_min_freq =  400000;
-                    # scaling_max_freq = 2400000;
-                    turbo = "always";
+                    governor = "performance";
+                    # 0 - 255 (higher = more battery life)
+                    energy_performance_preference = 0;
+                    # 0-15 (higher = more battery life)
+                    energy_perf_bias = 0;
 
-                    enable_thresholds = true;
+                    # scaling_min_freq = 400000;
+                    # scaling_max_freq = 1600000;
+
+                    # always, auto, never
+                    turbo = "always";
                 };
+                # charger = {
+                #     # governor = "powersave";
+                #     governor = "powersave";
+                #     energy_performance_preference = 170;
+                #     energy_perf_bias = 15;
+                #     # cpu becomes inefficient past 2.4 ghz
+                #     # scaling_min_freq =  400000;
+                #     # scaling_max_freq = 2400000;
+                #     turbo = "always";
+                #
+                #     enable_thresholds = true;
+                # };
                 battery = {
                     governor = "powersave";
                     energy_performance_preference = 170;

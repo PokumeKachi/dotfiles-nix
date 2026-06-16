@@ -3,13 +3,13 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+        determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
         # nix modules
         nix-flatpak.url = "github:gmodena/nix-flatpak?ref=latest";
         nix-evaluator-stats.url = "github:NotAShelf/nix-evaluator-stats";
         stylix.url = "github:nix-community/stylix/release-25.11";
         nur.url = "github:nix-community/NUR";
-        determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
         # apps
         youtube-tui.url = "github:Siriusmart/youtube-tui";
@@ -33,6 +33,7 @@
                     system = system;
                     specialArgs = { inherit inputs self; };
                     modules = [
+                        inputs.determinate.nixosModules.default
                         inputs.nix-flatpak.nixosModules.nix-flatpak
                         inputs.stylix.nixosModules.stylix
                         {

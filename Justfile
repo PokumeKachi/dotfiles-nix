@@ -21,7 +21,7 @@ _prebuild:
 
 
 test: _prebuild
-    nh os test {{FLAKE_PATH}}#$(just _get_host)
+    nh os test {{FLAKE_PATH}}#$(just _get_host) -- --no-update-lock-file
 
 trace: _prebuild
     nh os test {{FLAKE_PATH}}#$(just _get_host) --show-trace
@@ -30,7 +30,7 @@ switch: _prebuild
     @echo "you must restart after this"
     @read -p $'\033[1;31m[type \033[1;32m'"{{BUILD_PASS_PHRASE}}"$'\033[1;31m to confirm]\033[0m ' ans; \
     [ "$$ans" = "{{BUILD_PASS_PHRASE}}" ] || exit 0
-    nh os switch {{FLAKE_PATH}}#$(just _get_host)
+    nh os switch {{FLAKE_PATH}}#$(just _get_host) -- --no-update-lock-file
     sudo -p "enter root password to update kexec kernel: " bash -c 'kexec -l /boot/EFI/nixos/*-bzImage.efi \
         --initrd=$(ls -v /boot/EFI/nixos/*-initrd-linux-*.efi | tail -n1) \
         --command-line="$(cat /proc/cmdline)"'

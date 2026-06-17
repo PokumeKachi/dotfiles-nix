@@ -26,9 +26,9 @@
         # undervolt 3 'System Agent' 0
         # undervolt 4 'Analog I/O' 0
 
-        undervolt 0 'CPU' -60
-        undervolt 1 'GPU' -40
-        undervolt 2 'CPU Cache' -60
+        undervolt 0 'CPU' -70
+        undervolt 1 'GPU' -50
+        undervolt 2 'CPU Cache' -70
         undervolt 3 'System Agent' 0
         undervolt 4 'Analog I/O' 0
 

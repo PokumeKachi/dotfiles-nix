@@ -1,26 +1,32 @@
 {
-  description = "Kachi home config";
+    description = "Kachi home config";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    inputs = {
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+        home-manager = {
+            url = "github:nix-community/home-manager/release-26.05";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
-  };
 
-  outputs = { nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
+    outputs = { self, nixpkgs, home-manager, ... }:
+        let
+        system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
-  in {
-    homeConfigurations.kachi = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+    in {
+        homeConfigurations.kachi = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
 
-      modules = [
-        ./home.nix
-      ];
+            modules = [
+                ./home.nix
+            ];
+        };
+
+        apps.${system}.switch = {
+            type = "app";
+            program =
+                "${self.homeConfigurations.kachi.activationPackage}/activate";
+        };
     };
-  };
 }

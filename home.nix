@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
-
 {
-    home.username = builtins.getEnv "USER";
-    home.homeDirectory = builtins.getEnv "HOME";
+    home.username = "kachi";
+    home.homeDirectory = "/home/kachi";
 
     home.stateVersion = "26.05";
 
@@ -42,6 +41,4 @@
     };
 
     home.file = { };
-
-    programs.home-manager.enable = true;
 }

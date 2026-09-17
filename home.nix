@@ -31,7 +31,7 @@
         niri
         sunsetr
         nwg-displays
-        dolphin
+        kdePackages.dolphin
         kitty
         qutebrowser
         tofi

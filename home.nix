@@ -78,6 +78,7 @@
     };
 
     home.sessionVariables = {
+        GBM_BACKENDS_PATH = "${pkgs.mesa}/lib/gbm";
         EDITOR = "nvim";
         VISUAL = "nvim";
     };

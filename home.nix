@@ -5,10 +5,6 @@
     ...
 }:
 {
-    imports = [
-        inputs.noctalia.homeModules.default
-    ];
-
     home.username = "kachi";
     home.homeDirectory = "/home/kachi";
     home.stateVersion = "26.05";
@@ -35,8 +31,8 @@
         niri
         sunsetr
         nwg-displays
-        noctalia
         kitty
+        qutebrowser
         tofi
         swaylock
         wdisplays
@@ -78,8 +74,14 @@
     };
 
     home.sessionVariables = {
-        GBM_BACKENDS_PATH = "${pkgs.mesa}/lib/gbm";
+        # GBM_BACKENDS_PATH = "${pkgs.mesa}/lib/gbm";
         EDITOR = "nvim";
         VISUAL = "nvim";
     };
+
+    targets.genericLinux = {
+        enable = true;
+        gpu.enable = true;
+    };
+
 }

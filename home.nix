@@ -32,6 +32,10 @@
         flatpak
 
         # Niri utilities / apps referenced by config.kdl
+        niri
+        sunsetr
+        nwg-displays
+        noctalia
         kitty
         tofi
         swaylock
@@ -54,7 +58,6 @@
         gnome-keyring
 
         # Other startup applications
-        korganizer
         keepassxc
 
         # Input method
@@ -78,16 +81,4 @@
         EDITOR = "nvim";
         VISUAL = "nvim";
     };
-
-    programs.niri = {
-        enable = true;
-
-        # Keep your existing KDL config.
-        # Adjust this path to wherever you put it in your flake.
-        settings = {
-            # Put generated/simple settings here if desired.
-        };
-    };
-
-    programs.noctalia.enable = true;
 }

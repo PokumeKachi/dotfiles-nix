@@ -17,27 +17,36 @@
 
     outputs =
         {
-            self,
             nixpkgs,
             home-manager,
             ...
-        }:
+        }@inputs:
         let
             system = "x86_64-linux";
-            pkgs = import nixpkgs { inherit system; };
+
+            pkgs = import nixpkgs {
+                inherit system;
+            };
+
+            homeConfig =
+                home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+
+                    extraSpecialArgs = {
+                        inherit inputs;
+                    };
+
+                    modules = [
+                        ./home.nix
+                    ];
+                };
         in
         {
-            homeConfigurations.kachi = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-
-                modules = [
-                    ./home.nix
-                ];
-            };
+            homeConfigurations.kachi = homeConfig;
 
             apps.${system}.switch = {
                 type = "app";
-                program = "${self.homeConfigurations.kachi.activationPackage}/activate";
+                program = "${homeConfig.activationPackage}/activate";
             };
         };
 }

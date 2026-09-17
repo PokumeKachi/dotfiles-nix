@@ -10,23 +10,29 @@
         };
     };
 
-    outputs = { self, nixpkgs, home-manager, ... }:
+    outputs =
+        {
+            self,
+            nixpkgs,
+            home-manager,
+            ...
+        }:
         let
-        system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
-    in {
-        homeConfigurations.kachi = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+            system = "x86_64-linux";
+            pkgs = import nixpkgs { inherit system; };
+        in
+        {
+            homeConfigurations.kachi = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
 
-            modules = [
-                ./home.nix
-            ];
-        };
+                modules = [
+                    ./home.nix
+                ];
+            };
 
-        apps.${system}.switch = {
-            type = "app";
-            program =
-                "${self.homeConfigurations.kachi.activationPackage}/activate";
+            apps.${system}.switch = {
+                type = "app";
+                program = "${self.homeConfigurations.kachi.activationPackage}/activate";
+            };
         };
-    };
 }

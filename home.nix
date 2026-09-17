@@ -11,7 +11,6 @@
 
     home.packages = with pkgs; [
         # CLI / development
-        koreader
         direnv
         just
         neovim
@@ -24,11 +23,14 @@
         tree
         htop
         btop
-        gitui
+        lazygit
         flatpak
+        impala
+        bluetui
 
         # Niri utilities / apps referenced by config.kdl
         niri
+        koreader
         sunsetr
         nwg-displays
         kdePackages.dolphin

@@ -31,6 +31,7 @@
         niri
         sunsetr
         nwg-displays
+        dolphin
         kitty
         qutebrowser
         tofi

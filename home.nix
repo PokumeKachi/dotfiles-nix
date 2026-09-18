@@ -12,6 +12,8 @@
     home.packages = with pkgs; [
         # CLI / development
         direnv
+        pfetch-rs
+        bitwarden-cli
         just
         neovim
         git
@@ -31,14 +33,12 @@
         # Niri utilities / apps referenced by config.kdl
         niri
         koreader
-        sunsetr
         nwg-displays
         kdePackages.dolphin
         kitty
         qutebrowser
         tofi
         swaylock
-        wdisplays
         brightnessctl
         wlogout
         wofi-emoji
@@ -77,10 +77,13 @@
     };
 
     home.sessionVariables = {
-        # GBM_BACKENDS_PATH = "${pkgs.mesa}/lib/gbm";
         EDITOR = "nvim";
         VISUAL = "nvim";
     };
+
+    home.sessionVariablesExtra = ''
+        export XDG_DATA_DIRS="$HOME/.nix-profile/share:$XDG_DATA_DIRS"
+    '';
 
     targets.genericLinux = {
         enable = true;
